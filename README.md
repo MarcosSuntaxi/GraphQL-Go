@@ -77,10 +77,10 @@ Ensure the following are installed on your system:
         }
 
 
-Project Structure
+## Project Structure
 
-graphql-go/
-│
-├── main.go          # Main server file
-├── go.mod           # Go module dependencies
-└── go.sum           # Go module checksums
+        graphql-go/
+        │
+        ├── main.go          # Main server file
+        ├── go.mod           # Go module dependencies
+        └── go.sum           # Go module checksums
