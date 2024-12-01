@@ -36,45 +36,45 @@ Ensure the following are installed on your system:
     ```bash
     go run main.go
 
-The server will start at http://localhost:8080/graphql.
+- The server will start at http://localhost:8080/graphql.
 
 ## Usage
 
-GraphQL Query
-To interact with the API, you can use Postman, Curl, or a GraphQL client.
+    GraphQL Query
+    To interact with the API, you can use Postman, Curl, or a GraphQL client.
 
-Endpoint: http://localhost:8080/graphql
+- Endpoint: http://localhost:8080/graphql
 
-Headers:
-Content-Type: application/json
-Example Query
-    ```bash
-    query {
-    tasks {
-        id
-        title
-        done
-    }
-    }
-    
-Expected Response
-    ```bash
-    {
-    "data": {
-        "tasks": [
-        {
-            "id": "1",
-            "title": "Learn GraphQL",
-            "done": false
-        },
-        {
-            "id": "2",
-            "title": "Build a GraphQL API in Go",
-            "done": false
+- Headers:
+    Content-Type: application/json
+    - Example Query
+        ```bash
+        query {
+        tasks {
+            id
+            title
+            done
         }
-        ]
-    }
-    }
+        }
+
+    - Expected Response
+        ```bash
+        {
+        "data": {
+            "tasks": [
+            {
+                "id": "1",
+                "title": "Learn GraphQL",
+                "done": false
+            },
+            {
+                "id": "2",
+                "title": "Build a GraphQL API in Go",
+                "done": false
+            }
+            ]
+        }
+        }
 
 
 Project Structure
