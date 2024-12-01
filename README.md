@@ -29,16 +29,16 @@ Ensure the following are installed on your system:
    cd graphql-go
 
 2. **Initialize Dependencies:**
-
-go mod tidy
+    ```bash
+    go mod tidy
 
 3. **Run the Server**
-
-go run main.go
+    ```bash
+    go run main.go
 
 The server will start at http://localhost:8080/graphql.
 
-Usage
+## Usage
 GraphQL Query
 To interact with the API, you can use Postman, Curl, or a GraphQL client.
 
