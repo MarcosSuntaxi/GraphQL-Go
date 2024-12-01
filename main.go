@@ -9,14 +9,14 @@ import (
 	"github.com/graphql-go/handler"
 )
 
-// Definir el modelo de datos
+// Define the data model
 type Task struct {
 	ID    string `json:"id"`
 	Title string `json:"title"`
 	Done  bool   `json:"done"`
 }
 
-// Crear el tipo de objeto Task para GraphQL
+// Create the Task object type for GraphQL
 var taskType = graphql.NewObject(
 	graphql.ObjectConfig{
 		Name: "Task",
@@ -28,13 +28,13 @@ var taskType = graphql.NewObject(
 	},
 )
 
-// Crear los datos de ejemplo
+// Sample data
 var tasksData = []Task{
 	{ID: "1", Title: "Learn GraphQL", Done: false},
 	{ID: "2", Title: "Build a GraphQL API in Go", Done: false},
 }
 
-// Crear la consulta de GraphQL
+// Create the GraphQL query
 var rootQuery = graphql.Fields{
 	"tasks": &graphql.Field{
 		Type: graphql.NewList(taskType),
@@ -45,7 +45,7 @@ var rootQuery = graphql.Fields{
 }
 
 func main() {
-	// Crear el esquema GraphQL
+	// Create the GraphQL schema
 	schema, err := graphql.NewSchema(graphql.SchemaConfig{
 		Query: graphql.NewObject(graphql.ObjectConfig{
 			Name:   "RootQuery",
@@ -56,13 +56,13 @@ func main() {
 		log.Fatalf("Failed to create schema, %v", err)
 	}
 
-	// Crear el servidor GraphQL con el manejador de solicitudes
+	// Set up the GraphQL server with the request handler
 	http.Handle("/graphql", handler.New(&handler.Config{
 		Schema: &schema,
 		Pretty: true,
 	}))
 
-	// Iniciar el servidor en el puerto 8080
+	// Start the server on port 8080
 	fmt.Println("Server started at http://localhost:8080/graphql")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
